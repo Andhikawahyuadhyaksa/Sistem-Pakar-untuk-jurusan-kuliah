@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tes Penjurusan | PakarJurusan</title>
+  <link rel="stylesheet" href="test.css" />
+  <script defer src="test.js"></script>
+</head>
+<body>
+  <header class="test-header">
+    <div class="header-inner">
+      <h1 class="logo">Pakar<span>Jurusan</span></h1>
+      <nav><a href="index.html">Beranda</a></nav>
+    </div>
+  </header>
+
+  <main class="test-main">
+    <div class="test-card">
+      <h2 class="test-title">Tes Penjurusan</h2>
+      <p class="test-subtitle">
+        Jawablah pertanyaan berikut sesuai dengan minat dan kemampuan Anda.
+      </p>
+
+      <div class="progress">
+        <div id="progress-bar"></div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <p id="question-text">Memuat pertanyaan...</p>
+        <div class="button-group">
+          <button id="btn-ya" class="btn-option">YA</button>
+          <button id="btn-tidak" class="btn-option">TIDAK</button>
+        </div>
+      </div>
+
+      <div id="result-container" class="result-container" style="display: none;">
+        <h3>Rekomendasi Jurusan Kamu:</h3>
+        <p id="result-text"></p>
+        <button id="btn-restart" class="btn-restart">Ulangi Tes</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
