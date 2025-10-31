@@ -8,7 +8,8 @@
 
 /* BACKGROUND */
 body {
-  background: linear-gradient(135deg, #3a5eff, #6a83ff);
+  /* Menggunakan warna yang sama untuk background di header */
+  background: linear-gradient(135deg, #3a5eff, #6a83ff); 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,8 +20,10 @@ body {
 .test-header {
   width: 100%;
   background: #ffffff;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0);
+  /* Menggunakan box-shadow yang sangat ringan agar header menonjol sedikit */
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05); 
   margin-top: 0;
+  /* Membuat lengkungan hanya di bagian bawah */
   border-radius: 0 0 12px 12px;
 }
 
@@ -90,7 +93,7 @@ nav a:hover {
   font-size: 1.05rem;
 }
 
-/* PROGRESS BAR */
+/* PROGRESS BAR (Dihapus dari HTML, tapi styling tetap ada jika dibutuhkan) */
 .progress {
   background: #e7ebff;
   height: 10px;
@@ -107,7 +110,7 @@ nav a:hover {
   transition: width 0.4s ease;
 }
 
-/* QUESTION AREA */
+/* QUESTION AREA / FORM GEJALA */
 .question-container p {
   font-size: 1.4rem;
   color: #333;
@@ -115,16 +118,50 @@ nav a:hover {
   line-height: 1.5;
 }
 
+/* Styling untuk setiap Gejala */
+.question-group {
+    text-align: left;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    background: #f0f4ff; /* Latar belakang ringan */
+    border: 1px solid #e7ebff;
+}
+
+.question-group p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.question-group label {
+    display: block;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.question-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #3a5eff; 
+    transform: scale(1.1); /* Sedikit membesarkan checkbox */
+}
+
+
 .button-group {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 
+/* Styling Tombol Proses */
 .btn-option {
-  border: 2px solid #c9d2ff;
-  background: #fff;
-  color: #333;
+  border: none;
+  background: #ff6600; /* Warna Orange untuk proses */
+  color: #fff;
   padding: 0.7rem 2.5rem;
   border-radius: 40px;
   font-weight: 700;
@@ -134,9 +171,7 @@ nav a:hover {
 }
 
 .btn-option:hover {
-  background: #3a5eff;
-  color: #fff;
-  border-color: #3a5eff;
+  background: #e55c00;
   transform: translateY(-2px);
 }
 
@@ -151,10 +186,32 @@ nav a:hover {
 }
 
 .result-container p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
+
+#cf-final {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+#cf-final ul {
+    list-style: none;
+    padding: 10px 0 0 0;
+    text-align: left;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+#cf-final li {
+    padding: 3px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 0.95rem;
+}
+
 
 .btn-restart {
   background: #3a5eff;
@@ -181,4 +238,64 @@ nav a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* MEDIA QUERY untuk Responsif */
+@media (max-width: 480px) {
+    .test-card {
+        padding: 2rem 1.5rem;
+    }
+    .test-title {
+        font-size: 1.8rem;
+    }
+    .question-group p {
+        font-size: 0.95rem;
+    }
+    /* Styling Baru untuk Pemisah Grup Pertanyaan */
+.group-heading {
+    text-align: left;
+    color: #3a5eff; /* Warna biru konsisten dengan tema */
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    border-bottom: 2px solid #e7ebff; /* Garis bawah halus */
+}
+
+.separator {
+    border: none;
+    height: 1px;
+    background-color: #e7ebff;
+    margin: 25px 0;
+}
+/* Progress Bar Style (Diambil dari kode CSS Anda sebelumnya) */
+.progress {
+  background: #e7ebff;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 10px;
+  /* Atur ke 0% saat awal */
+  width: 0%; 
+  background: linear-gradient(90deg, #ff6600, #ff8c00); /* Memberi gradient untuk visual yang lebih menarik */
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+/* Penyesuaian Tombol Proses agar menyerupai tombol YA/TIDAK */
+.btn-option {
+    /* ... (CSS lama Anda) ... */
+    background: #ff6600; /* Warna Orange untuk proses */
+    color: #fff;
+    border: none;
+    /* ... */
+}
+.btn-option:hover {
+    background: #e55c00;
+}
 }

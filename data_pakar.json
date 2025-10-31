@@ -1,79 +1,25 @@
 {
-  "pertanyaan": {
-    "m1": {
-      "teks": "Apakah Anda lulusan SMA jurusan IPA?",
-      "ya": "m2",
-      "tidak": "m14"
-    },
-    "m2": {
-      "teks": "Apakah Anda suka dengan bidang logika dan analisis?",
-      "ya": "m3-a",
-      "tidak": "m3-b"
-    },
-
-    "m3-a": { "teks": "Apakah Anda suka matematika?", "ya": "m4-a", "tidak": "m8-a" },
-    "m4-a": { "teks": "Apakah Anda tertarik membuat sistem komputer?", "ya": "m5-a", "tidak": "s12" },
-    "m5-a": { "teks": "Apakah Anda suka coding?", "ya": "m6-a", "tidak": "m7-a" },
-    "m6-a": { "teks": "Apakah Anda tertarik AI?", "ya": "s1", "tidak": "s2" },
-    "m7-a": { "teks": "Apakah Anda suka desain bangunan?", "ya": "s3", "tidak": "s4" },
-    "m8-a": { "teks": "Apakah Anda tertarik ekonomi?", "ya": "m9-a", "tidak": "m10-a" },
-    "m9-a": { "teks": "Apakah Anda teliti dalam angka?", "ya": "s5", "tidak": "s6" },
-    "m10-a": { "teks": "Apakah Anda suka biologi?", "ya": "m11-a", "tidak": "m12-a" },
-    "m11-a": { "teks": "Apakah Anda tertarik kesehatan manusia?", "ya": "s7", "tidak": "s8" },
-    "m12-a": { "teks": "Apakah Anda religius?", "ya": "s9", "tidak": "m13-a" },
-    "m13-a": { "teks": "Apakah Anda suka bahasa Inggris?", "ya": "s10", "tidak": "s11" },
-
-    "m3-b": { "teks": "Apakah Anda suka logika (meski bukan IPA)?", "ya": "m4-b", "tidak": "m8-b" },
-    "m4-b": { "teks": "Apakah Anda suka sistem informasi?", "ya": "m5-b", "tidak": "s24" },
-    "m5-b": { "teks": "Apakah Anda suka komputer?", "ya": "m6-b", "tidak": "m7-b" },
-    "m6-b": { "teks": "Apakah Anda suka IT?", "ya": "s13", "tidak": "s14" },
-    "m7-b": { "teks": "Apakah Anda suka desain produk?", "ya": "s15", "tidak": "s16" },
-    "m8-b": { "teks": "Apakah Anda suka ekonomi (non-IPA)?", "ya": "m9-b", "tidak": "m10-b" },
-    "m9-b": { "teks": "Apakah Anda suka akuntansi?", "ya": "s17", "tidak": "s18" },
-    "m10-b": { "teks": "Apakah Anda suka biologi?", "ya": "m11-b", "tidak": "m12-b" },
-    "m11-b": { "teks": "Apakah Anda suka kedokteran?", "ya": "s19", "tidak": "s20" },
-    "m12-b": { "teks": "Apakah Anda religius (non-IPA)?", "ya": "s21", "tidak": "m13-b" },
-    "m13-b": { "teks": "Apakah Anda suka bahasa Inggris?", "ya": "s22", "tidak": "s23" },
-
-    "m14": { "teks": "Apakah Anda tamatan SMK?", "ya": "m15", "tidak": "m16" },
-    "m15": { "teks": "Apakah Anda suka menggambar?", "ya": "s25", "tidak": "s26" },
-    "m16": { "teks": "Apakah Anda suka teknologi?", "ya": "m17", "tidak": "m18" },
-    "m17": { "teks": "Apakah Anda suka komputer?", "ya": "s27", "tidak": "s28" },
-    "m18": { "teks": "Apakah Anda suka bisnis?", "ya": "m19", "tidak": "s31" },
-    "m19": { "teks": "Apakah Anda suka akuntansi?", "ya": "s29", "tidak": "s30" }
-  },
-
-  "solusi": {
-    "s1": "Teknik Informatika",
-    "s2": "Sistem Informasi",
-    "s3": "Arsitektur",
-    "s4": "Desain Produk",
-    "s5": "Akuntansi",
-    "s6": "Manajemen",
-    "s7": "Kedokteran",
-    "s8": "Bioteknologi",
-    "s9": "Teologi",
-    "s10": "Pendidikan Bahasa Inggris",
-    "s11": "Bidang lain terkait bahasa dan humaniora",
-    "s12": "Bidang desain alternatif (DKV, animasi)",
-    "s13": "Teknik Informatika (non-IPA)",
-    "s14": "Sistem Informasi (non-IPA)",
-    "s15": "Arsitektur (non-IPA)",
-    "s16": "Desain Produk (non-IPA)",
-    "s17": "Akuntansi (non-IPA)",
-    "s18": "Manajemen (non-IPA)",
-    "s19": "Kedokteran (non-IPA)",
-    "s20": "Bioteknologi (non-IPA)",
-    "s21": "Teologi (non-sains)",
-    "s22": "Pendidikan Bahasa Inggris (non-IPA)",
-    "s23": "Bidang humaniora umum",
-    "s24": "Bidang umum non-sains",
-    "s25": "Arsitektur (SMK)",
-    "s26": "Desain Produk (SMK)",
-    "s27": "Informatika (SMK)",
-    "s28": "Sistem Informasi (SMK)",
-    "s29": "Akuntansi (SMK)",
-    "s30": "Manajemen (SMK)",
-    "s31": "Bidang umum non-SMK"
-  }
+    "rules": [
+        
+        { "id": "r1", "if": ["lulusan_IPA", "suka_logika"], "then": "potensi_teknologi", "cf": 0.8 },
+        
+        
+        { "id": "r2", "if": ["potensi_teknologi", "suka_matematika"], "then": "Teknik Informatika", "cf": 0.9 },
+        
+        
+        { "id": "r12", "if": ["suka_pemrograman", "suka_matematika"], "then": "Teknik Informatika", "cf": 0.7 }, 
+        
+        
+        { "id": "r3", "if": ["potensi_teknologi", "tidak_suka_matematika"], "then": "Sistem Informasi", "cf": 0.8 },
+        
+      
+        { "id": "r4", "if": ["suka_desain", "lulusan_IPA"], "then": "Arsitektur", "cf": 0.85 },
+        { "id": "r5", "if": ["suka_desain", "tidak_IPA"], "then": "Desain Produk", "cf": 0.8 },
+        { "id": "r6", "if": ["suka_ekonomi"], "then": "Manajemen", "cf": 0.75 },
+        { "id": "r7", "if": ["suka_angka"], "then": "Akuntansi", "cf": 0.9 },
+        { "id": "r8", "if": ["suka_biologi", "suka_kesehatan"], "then": "Kedokteran", "cf": 0.85 },
+        { "id": "r9", "if": ["suka_biologi", "tidak_kesehatan"], "then": "Bioteknologi", "cf": 0.8 },
+        { "id": "r10", "if": ["religius"], "then": "Teologi", "cf": 0.9 },
+        { "id": "r11", "if": ["suka_bahasa"], "then": "Pendidikan Bahasa Inggris", "cf": 0.85 }
+    ]
 }

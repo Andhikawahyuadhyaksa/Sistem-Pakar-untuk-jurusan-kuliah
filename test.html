@@ -1,45 +1,131 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tes Penjurusan | PakarJurusan</title>
-  <link rel="stylesheet" href="test.css" />
-  <script defer src="test.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes Penjurusan | PakarJurusan</title>
+    <link rel="stylesheet" href="test.css" />
+    <script defer src="test.js"></script>
 </head>
 <body>
-  <header class="test-header">
-    <div class="header-inner">
-      <h1 class="logo">Pakar<span>Jurusan</span></h1>
-      <nav><a href="index.html">Beranda</a></nav>
-    </div>
-  </header>
-
-  <main class="test-main">
-    <div class="test-card">
-      <h2 class="test-title">Tes Penjurusan</h2>
-      <p class="test-subtitle">
-        Jawablah pertanyaan berikut sesuai dengan minat dan kemampuan Anda.
-      </p>
-
-      <div class="progress">
-        <div id="progress-bar"></div>
-      </div>
-
-      <div id="question-container" class="question-container">
-        <p id="question-text">Memuat pertanyaan...</p>
-        <div class="button-group">
-          <button id="btn-ya" class="btn-option">YA</button>
-          <button id="btn-tidak" class="btn-option">TIDAK</button>
+    <header class="test-header">
+        <div class="header-inner">
+            <h1 class="logo">Pakar<span>Jurusan</span></h1>
+            <nav><a href="index.html">Beranda</a></nav>
         </div>
-      </div>
+    </header>
 
-      <div id="result-container" class="result-container" style="display: none;">
-        <h3>Rekomendasi Jurusan Kamu:</h3>
-        <p id="result-text"></p>
-        <button id="btn-restart" class="btn-restart">Ulangi Tes</button>
-      </div>
-    </div>
-  </main>
+    <main class="test-main">
+        <div class="test-card">
+            <h2 class="test-title">Tes Penjurusan</h2>
+            <p class="test-subtitle">
+                Tandai semua pernyataan di bawah ini yang SANGAT SESUAI dengan minat dan latar belakang Anda.
+            </p>
+
+            <div class="progress">
+                <div id="progress-bar"></div>
+            </div>
+
+            <form id="quiz-form" class="question-container">
+                
+                <h3 class="group-heading">A. Latar Belakang & Kemampuan Dasar</h3>
+                
+                <div class="question-group">
+                    <p>1. Saya adalah lulusan SMA jurusan IPA.</p>
+                    <label><input type="checkbox" name="gejala" value="lulusan_IPA"> Ya, saya dari jurusan IPA.</label>
+                </div>
+
+                <div class="question-group">
+                    <p>2. Saya bukan lulusan SMA jurusan IPA (e.g., IPS, SMK non-teknis, dll).</p>
+                    <label><input type="checkbox" name="gejala" value="tidak_IPA"> Ya, saya bukan dari jurusan IPA.</label>
+                </div>
+                
+                <div class="question-group">
+                    <p>3. Saya sangat suka dengan bidang logika dan analisis.</p>
+                    <label><input type="checkbox" name="gejala" value="suka_logika"> Ya, Sangat Sesuai.</label>
+                </div>
+                
+                <hr class="separator"/>
+
+                <h3 class="group-heading">B. Minat STEM & Teknik</h3>
+
+                <div class="question-group">
+                    <p>4. Saya sangat suka dengan matematika (aljabar, kalkulus, statistika).</p>
+                    <label><input type="checkbox" name="gejala" value="suka_matematika"> Ya, Sangat Sesuai.</label>
+                </div>
+                
+                <div class="question-group">
+                    <p>5. Saya tidak suka (atau kurang tertarik) dengan matematika.</p>
+                    <label><input type="checkbox" name="gejala" value="tidak_suka_matematika"> Ya, Tidak Sesuai.</label>
+                </div>
+
+                <div class="question-group">
+                    <p>6. Saya suka membuat kode (coding) atau pemrograman.</p>
+                    <label><input type="checkbox" name="gejala" value="suka_pemrograman"> Ya, Sesuai.</label>
+                </div>
+                
+                <hr class="separator"/>
+
+                <h3 class="group-heading">C. Minat Desain & Bisnis</h3>
+
+                <div class="question-group">
+                    <p>7. Saya suka dengan dunia desain (gambar, bentuk, estetika).</p>
+                    <label><input type="checkbox" name="gejala" value="suka_desain"> Ya, Sesuai.</label>
+                </div>
+                
+                <div class="question-group">
+                    <p>8. Saya suka bidang ekonomi dan perdagangan.</p>
+                    <label><input type="checkbox" name="gejala" value="suka_ekonomi"> Ya, Sesuai.</label>
+                </div>
+
+                <div class="question-group">
+                    <p>9. Saya suka bekerja dengan angka, pembukuan, dan ketelitian.</p>
+                    <label><input type="checkbox" name="gejala" value="suka_angka"> Ya, Sesuai.</label>
+                </div>
+
+                <hr class="separator"/>
+
+                <h3 class="group-heading">D. Minat Biologi & Humanitas</h3>
+
+                <div class="question-group">
+                    <p>10. Saya suka bidang biologi (makhluk hidup, alam, lingkungan).</p>
+                    <label><input type="checkbox" name="gejala" value="suka_biologi"> Ya, Sesuai.</label>
+                </div>
+
+                <div class="question-group">
+                    <p>11. Saya tertarik dengan kesehatan manusia/kedokteran.</p>
+                    <label><input type="checkbox" name="gejala" value="suka_kesehatan"> Ya, Sesuai.</label>
+                </div>
+
+                <div class="question-group">
+                    <p>12. Saya tidak tertarik dengan kesehatan (misalnya lebih suka penelitian murni).</p>
+                    <label><input type="checkbox" name="gejala" value="tidak_kesehatan"> Ya, Sesuai.</label>
+                </div>
+                
+                <div class="question-group">
+                    <p>13. Saya memiliki ketertarikan yang tinggi pada bidang keagamaan/spiritual (religius).</p>
+                    <label><input type="checkbox" name="gejala" value="religius"> Ya, Sesuai.</label>
+                </div>
+
+                <div class="question-group">
+                    <p>14. Saya suka dengan bidang bahasa (termasuk sastra dan linguistik).</p>
+                    <label><input type="checkbox" name="gejala" value="suka_bahasa"> Ya, Sesuai.</label>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" id="btn-proses" class="btn-option">
+                        PROSES HASIL REKOMENDASI
+                    </button>
+                </div>
+            </form>
+
+            <div id="result-container" class="result-container" style="display: none;">
+                <h3 style="color: #3a5eff;">Rekomendasi Jurusan Terbaik Anda:</h3>
+                <p id="result-text"></p>
+                <div id="cf-final"></div>
+                <button id="btn-restart" class="btn-restart">Ulangi Tes</button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
